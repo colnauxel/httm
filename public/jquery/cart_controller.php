@@ -94,5 +94,22 @@ $('#cart-popover').popover({
       }
       });
   });  
+  // Gửi email xác nhận
+    $(document).on('click', '#sendmail', function(){
+      var email=$('#email');
+      $.ajax({
+      url:"./jquery/sendmail.php",
+      method:"POST",
+      datatype:'json',
+      data:{
+        email:email.val()
+      },
+      success:function()
+      {
+       
+        alert("Đã gửi gmail xác nhận");
+      }
+      });
+  });  
 });
 </script>

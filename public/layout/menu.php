@@ -42,16 +42,12 @@
                   <li>login</li>
 								</ul>
         </div>
-        <!--/.nav-collapse -->
-      
-      </div>
-    </div>
-
-      <!-- Hiện sách trong giỏ hàng -->
-      <div id="popover_content_wrapper"  style="display: none;width:600px;">
+        
+          <!-- Hiện sách trong giỏ hàng -->
+          <div id="popover_content_wrapper"  style="display: none;width:600px;">
             <span id="cart_details"></span>
               <div align="right">
-                <a href="#" class="btn btn-primary" id="check_out_cart">
+                <a href="payment.php" class="btn btn-primary" id="check_out_cart">
                 <span class="glyphicon glyphicon-shopping-cart"></span> Thanh Toán
                 </a>
                 <a href="#" class="btn btn-default" id="clear_cart">
@@ -67,3 +63,7 @@
           
           </div>
           <!--  -->
+      </div>
+    </div>
+
+  

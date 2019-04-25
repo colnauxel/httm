@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-try {
+// try {
     //Server settings
     $mail->SMTPDebug = 1;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
@@ -41,9 +41,9 @@ try {
 
     $mail->send();
     echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+// } catch (Exception $e) {
+//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

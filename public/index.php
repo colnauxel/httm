@@ -13,16 +13,17 @@ $books=mysqli_fetch_all($query_getBooks,MYSQLI_ASSOC);
 <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron mg-top">
         <h1>Navbar example</h1>
         <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
         <p>To see the difference between static and fixed top navbars, just scroll.</p>
         <p>
-          <button class="btn btn-lg btn-primary" id="test" href="" role="button">View navbar docs »</button>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs »</a>
         </p>
       </div>
 
     </div>
+
 <!-- list0 books -->
 <h2>Tất cả các sách</h2>
 <?php foreach($books as $book ): ?>
