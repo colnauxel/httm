@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if($_SESSION['nameCustomer'] ==''){
+    header('location:http://localhost/bansach_php/public/login.php');
+}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,20 +12,21 @@ require '../config/db.php';
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $total_price = 0;
 $idOrder=NULL;
-
+$msg=array();
+$errors=array();
 // Data sendmail
 require './layout/data_order.php';
 //Insert order and sendmail
 if(isset($_POST['submit'])){
     $email_address=$_POST['addressEmail'];
     //insert order book
-    $time=date(" H:i:s");
+    $time=date(" H:i:s A");
     $day=date("d-m-Y");
     $sql_order="INSERT INTO orderbooks VALUES ('',1,$total_price,'$time','$day')";
     $query_order=mysqli_query($conn,$sql_order);
     if($query_order){
         $idOrder= mysqli_insert_id($conn);
-        $id=NULL;
+        echo $idOrder;
         if(!empty($_SESSION["shopping_cart"])){
             foreach($_SESSION["shopping_cart"] as $keys => $values){
                 $idBook=$values["idBook"];
@@ -69,11 +72,15 @@ if(isset($_POST['submit'])){
     $mail->Subject = 'Xác nhận hóa đơn đã mua';
     $mail->Body    = $output;
     $mail->AltBody = strip_tags($output);
-
+    if(empty($nameCustomer)){
+       
+    }
     if($mail->send()){
-        echo 'Message has been sent';
-    }else
-    echo 'Send message faild';
+        array_push($msg,'Đã gửi email xác nhận');
+    }else{
+        array_push($errors,'Gửi email xác nhận thất bại');
+    }
+      
     
 // } catch (Exception $e) {
 //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -140,9 +147,10 @@ if(isset($_POST['submit'])){
     <!-- From email comfir -->
     <form role="form" action="" method="POST" class="col-md-6 mg-top">
     <h2>Thông tin xác nhận email</h2>
+    <h5><strong> <?php require('layout/message.php')?></strong></h5>
         <div class="form-group">
             <label >Email address</label>
-            <input type="email" name="addressEmail" id="email" class="form-control" placeholder="Enter email">
+            <input type="email" name="addressEmail" id="email" value="<?php echo $_SESSION['emailCustomer'];?>" class="form-control" placeholder="Enter email">
         </div>
         <!-- <div class="form-group">
             <label for="exampleInputPassword1">Password</label>

@@ -4,3 +4,13 @@
 .mg-top {
     margin-top: 100px;
 }
+#form-login{
+    width: 50%;
+}
+.item-product{
+    box-shadow: 1px 1px 1px 1px #d2cfcf;
+}
+#detail-book{
+    background-color:#d4e7ef ;
+    border-radius: 10px;
+} 
