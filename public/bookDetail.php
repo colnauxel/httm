@@ -37,7 +37,7 @@ $book=mysqli_fetch_assoc($query_getBook);
       <input type="hidden" name="hidden_price" id="price<?php echo $book['idBook'];?>" value="<?php echo $book['priceBook']; ?>" />
       <input type="hidden" name="hidden_idCategory" id="idCategory<?php echo $book['idBook'];?>" value="<?php echo $book['idCategory']; ?>" />
       
-      Số lượng:<input type="number" value="1" name="quantity" min="1" max="5">
+      Số lượng:<input type="number" value="1" id="quantity<?php echo $book['idBook'];?>" name="quantity" min="1" max="5">
       <a href="" name="add_to_cart" id="<?php echo $book['idBook'];?>" class="btn btn-primary add_to_cart">Mua</a>
       </div>
 </div>

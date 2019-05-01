@@ -28,7 +28,7 @@ $i=1;
 
         <div class="form-group">
             <!-- <label >Tìm kiếm</label>   -->
-            <input type="text" id="listpost" class="form-control" placeholder="Tìm kiếm">
+            <input type="text" id="search_book" class="form-control" placeholder="Tìm kiếm">
         </div>
             <table class="table table-hover">
             <thead>
@@ -45,7 +45,7 @@ $i=1;
 
                 </tr>
             </thead>
-            <tbody class="list_post">
+            <tbody id="show_book">
                 <?php foreach($books as $book ): ?>
 
                     <tr>
@@ -61,8 +61,8 @@ $i=1;
                         <td><?php echo $book['nameCategory'];?></td>
                     
 
-                        <td><a href="http://localhost/php/public/admin/edit_book.php/?idBook=<?php echo $book['idBook'];?>" class="btn btn-primary" >Sửa</a></td>
-                        <td>   <a href="http://localhost/php/public/admin/delete.php/?idBook=<?php echo $book['idBook'];?>"  class="btn btn-danger delete_post" >Xoa</a>
+                        <td><a href="http://localhost/bansach_php/public/admin/edit_book.php/?idBook=<?php echo $book['idBook'];?>" class="btn btn-primary" >Sửa</a></td>
+                        <td>   <a href="http://localhost/bansach_php/public/admin/delete.php/?idBook=<?php echo $book['idBook'];?>"  class="btn btn-danger delete_book" >Xoa</a>
                         </td>
                         
                     </tr>

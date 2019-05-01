@@ -1,3 +1,14 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
 .popover {
     max-width:100%;
 }
@@ -7,10 +18,140 @@
 #form-login{
     width: 50%;
 }
+/* header */
+.navbar.navbar-default.nav-lg.navbar-fixed-top{
+    border-bottom:2px solid darkcyan;
+}
+/* Section-1 */
+#section-1{
+    margin-top: 55px;
+    background-image: url('../upload/img2.jpeg') ;
+    background-position:center;
+    background-size:cover;
+    height:500px;
+    
+}
+#section-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#section-1>h1{
+    color: aliceblue;
+    font-size: 3em;
+
+}
+#section-1>p{
+    color: aliceblue;
+    font-weight: bold;
+}
+#section-1 .button{
+    margin-top: 30px;
+    display: block;
+    padding: 10px 15px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    color: darkcyan;;
+    font-weight: bold;
+}
+#section-1 .button:hover{
+    background-color: darkcyan;
+    color: aliceblue;
+    transition: all ease-in-out 0.3s;
+    
+}
+.highlight{
+    color: darkcyan;
+}
+/* list product */
+
 .item-product{
-    box-shadow: 1px 1px 1px 1px #d2cfcf;
+    
+    margin: 10px;
+    border: 1px solid #eae3e2;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.item-product:hover{
+    
+   background-color: #d4d9e7;
+   box-shadow: 0px 0px 2px 2px #d2cfcf;
+   
+}
+.item-product a{
+    margin: 10px;
 }
 #detail-book{
     background-color:#d4e7ef ;
     border-radius: 10px;
 } 
+form.form-inline{
+    margin-top: 10px;
+}
+
+/* footer */
+#footer{
+    border-top: 1px solid darkcyan;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 50px;
+    background-color: rgb(110, 108, 108);
+    color: antiquewhite;
+}
+#footer .author{
+   
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    grid-column: 1/4;
+    background-color:rgb(43, 41, 41);
+}
+#footer .footer-1{
+    margin: 80px 0px;
+
+    text-align: center;
+    grid-column: 1/2;
+}
+#footer .footer-2{
+    grid-column: 2/3;
+    text-align: center;
+    margin: auto;
+    
+}
+.footer-2 a{
+    color:antiquewhite;
+    display: block;
+    padding: 15px 0px;
+    
+}
+.footer-2 a:hover{
+    color: darkcyan;
+    transition: all ease-in-out 0.3s;
+}
+.footer-3{
+    margin:60px 0 0 0;
+    text-align: center;
+}
+.footer-3 input{
+    width: 60%;
+    height: 20px;
+    outline: none;
+    border: none;
+    padding: 8px;
+    font-size: 1em;
+    
+}
+.footer-3 .sub{
+    
+    padding: 9px 10px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    color: darkcyan;
+    font-weight: bold;
+}
+.footer-3 .sub:hover{
+    background-color: darkcyan;
+    color: white;
+    transition: all ease-in-out 0.3s;
+}

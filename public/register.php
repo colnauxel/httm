@@ -20,33 +20,48 @@ if(isset($_POST['resgister'])){
     $image=$_FILES['image']['name'];//name image
     $sizeimage=$_FILES['image']['size'];// size image
     $typeimage=$_FILES['image']['type'];//type image
-    if(empty($nameCustomer)){
-        array_push($errors,"Tài khoản không được bỏ trống");
+    
+    if($image==''){
+        $image="default_user.jpg";
     }
-    if(empty($passwordCustomer)){
-        array_push($errors,"Mật khẩu không được bỏ trống");
+  
+   
+   
+    // if(empty($emailCustomer)){
+    //     array_push($errors,"emailCustomer không được bỏ trống");
+    // }
+    // if(empty($addressCustomer)){
+    //     array_push($errors,"Địa Chỉ không được bỏ trống");
+    // }
+    // if(empty($phoneCustomer)){
+    //     array_push($errors,"Điện thoại không được bỏ trống");
+    // }
+    // if(empty($image)){
+    //     array_push($errors,"Avatar không được bỏ trống");
+    // }
+    // Regex
+    if(!preg_match('/^[a-z0-9]{3,50}$/',$nameCustomer)){
+        array_push($errors,"Tài khoản phải dài từ 3-50 kí tự");
+    }
+    if(!preg_match('/^[a-z0-9]{3,20}$/',$passwordCustomer)){
+        array_push($errors,"Tài khoản phải dài từ 3-20 kí tự");
     }
     if($passwordCustomer!=$passwordCustomer_comfirm){
         array_push($errors,"Mật khẩu không trùng khớp");
     }
-   
-    if(empty($emailCustomer)){
-        array_push($errors,"emailCustomer không được bỏ trống");
+    if(!preg_match('/^[a-z0-9]{10,50}$/',$addressCustomer)){
+        array_push($errors,"Địa chỉ phải dài từ 10-50 kí tự");
     }
-    if(empty($addressCustomer)){
-        array_push($errors,"Địa Chỉ không được bỏ trống");
+    if(!preg_match('/^[0-9]{9,10}$/',$phoneCustomer)){
+        array_push($errors,"Số điện thoại phải có 9 hoặc 10 chữ số");
     }
-    if(empty($phoneCustomer)){
-        array_push($errors,"Điện thoại không được bỏ trống");
+    if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/",$emailCustomer)){
+        array_push($errors,"Email phải có đinh dạng xxx@xxx.com");
     }
-    if(empty($image)){
-        array_push($errors,"Avatar không được bỏ trống");
-    }
-    
     if(count($errors)==0){
         $sql1="SELECT *FROM customer WHERE nameCustomer='$nameCustomer'";
         $query1=mysqli_query($conn,$sql1);
-     
+        
         if(mysqli_num_rows($query1)==1){
             array_push($errors,"Tai khoan da toi tai");
            
@@ -61,10 +76,11 @@ if(isset($_POST['resgister'])){
             
             if($query2){
                 array_push($msg,"Đăng kí thanh công");
+                header('location:login.php');
             }else{
                 array_push($msg,"Đăng kí thất bại");
             }
-            // header('location:login.php');
+            
         }
     }
 }

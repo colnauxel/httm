@@ -11,3 +11,4 @@ if(mysqli_connect_errno()){
     //Connect failed
     echo 'Connect mysql faild'.mysqli_connect_errno();
 }
+?>

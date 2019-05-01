@@ -1,7 +1,6 @@
-
- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default nav-lg navbar-fixed-top"  role="navigation">
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header menu">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -12,20 +11,23 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="http://localhost/bansach_php/public/index.php">Trang Chủ</a></li>
+            <li ><a href="http://localhost/bansach_php/public/index.php">Trang Chủ</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+            
               </ul>
+            </li> -->
+            <li>
+            <form class="form-inline" method="GET" action="result.php">
+              <div class="form-group">
+              
+                <input type="text" class="form-control" name="p" placeholder="Nhập thông tin">
+              </div>
+            <button type="submit" name="search" class="btn btn-primary mb-2">Tìm kiếm</button>
+            </form>
             </li>
           </ul>
           
@@ -47,8 +49,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="http://localhost/bansach_php/public/upload/<?php echo $_SESSION['avatarCustomer'];?>" alt="" width="30px" height="30px"> <?php echo $_SESSION['nameCustomer'];?><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                      
-                    
-                      <li><a href="http://localhost/bansach_php/public/logout.php">Logout</a></li>
+                    <li><a href="http://localhost/bansach_php/public/acount.php">Thông tin tài khoản</a></li>
+                      <li><a href="http://localhost/bansach_php/public/logout.php">Đăng xuất</a></li>
                   
                   </ul>
                 </li>

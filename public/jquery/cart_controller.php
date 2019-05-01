@@ -36,7 +36,7 @@ $('#cart-popover').popover({
  
     var priceBook = $('#price'+idBook+'').val();
     // var product_quantity = $('#quantity'+idBook).val();
-    var product_quantity=1;
+    var product_quantity=$('#quantity'+idBook+'').val();
     var action = "add";
     if(product_quantity > 0)
     {
@@ -47,20 +47,20 @@ $('#cart-popover').popover({
       success:function(data)
       {
       load_cart_data();
-      alert("Item has been Added into Cart");
+      alert("Sản phẩm đã được thêm vào giỏ hàng");
       }
     });
     }
     else
     {
-    alert("lease Enter Number of Quantity");
+    alert("Bạn chưa nhập số lượng");
     }
   });
   // Xóa sản phẩm trong giỏ hàng
   $(document).on('click', '.delete', function(){
   var idBook = $(this).attr("id");
   var action = 'remove';
-  if(confirm("Are you sure you want to remove this product?"))
+  if(confirm("Bạn có chắc muốn xóa?"))
   {
    $.ajax({
     url:"./jquery/action_cart.php",
@@ -70,7 +70,7 @@ $('#cart-popover').popover({
     {
      load_cart_data();
      $('#cart-popover').popover('hide');
-     alert("Item has been removed from Cart");
+     alert("Đã xóa sản phẩm");
     }
    })
   }
@@ -90,7 +90,7 @@ $('#cart-popover').popover({
       {
         load_cart_data();
         $('#cart-popover').popover('hide');
-        alert("Your Cart has been clear");
+        alert("Giỏ Hàng Trống");
       }
       });
   });  

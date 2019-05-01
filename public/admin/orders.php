@@ -28,7 +28,7 @@ $i=1;
 
         <div class="form-group">
             <!-- <label >Tìm kiếm</label>   -->
-            <input type="text" id="listpost" class="form-control" placeholder="Tìm kiếm">
+            <input type="text" id="search_order" class="form-control" placeholder="Tìm kiếm">
         </div>
             <table class="table table-hover">
             <thead>
@@ -42,7 +42,7 @@ $i=1;
 
                 </tr>
             </thead>
-            <tbody class="list_post">
+            <tbody id="show_order">
             <?php foreach($orders as $order ): ?>
 
                 <tr>

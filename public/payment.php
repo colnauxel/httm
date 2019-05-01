@@ -17,12 +17,13 @@ $errors=array();
 // Data sendmail
 require './layout/data_order.php';
 //Insert order and sendmail
+$idCustomer=$_SESSION['idCustomer'];
 if(isset($_POST['submit'])){
     $email_address=$_POST['addressEmail'];
     //insert order book
     $time=date(" H:i:s A");
     $day=date("d-m-Y");
-    $sql_order="INSERT INTO orderbooks VALUES ('',1,$total_price,'$time','$day')";
+    $sql_order="INSERT INTO orderbooks VALUES ('',$idCustomer,$total_price,'$time','$day')";
     $query_order=mysqli_query($conn,$sql_order);
     if($query_order){
         $idOrder= mysqli_insert_id($conn);
@@ -50,7 +51,7 @@ if(isset($_POST['submit'])){
     $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'lexuanloc1202@gmail.com';                     // SMTP username
-    $mail->Password   = 'xuanloc120297';                               // SMTP password
+    $mail->Password   = 'xuanloc10297';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 

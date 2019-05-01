@@ -9,9 +9,4 @@ if(empty($_SESSION['nameUser']) == false){
     header('location:http://localhost/bansach_php/public/admin/login_ad.php');
 }
 
-
-
-
-
-
 ?>

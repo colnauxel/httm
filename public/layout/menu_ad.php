@@ -13,9 +13,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="http://localhost/bansach_php/public/index.php">Trang Chủ</a></li>
-            <li><a href="category.php">Chủ Đề</a></li>
-            <li><a href="books.php">Sách</a></li>
-            <li><a href="orders.php">Đơn hàng</a></li>
+            <li><a href="http://localhost/bansach_php/public/admin/category.php">Chủ Đề</a></li>
+            <li><a href="http://localhost/bansach_php/public/admin/books.php">Sách</a></li>
+            <li><a href="http://localhost/bansach_php/public/admin/orders.php">Đơn hàng</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">

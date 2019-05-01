@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ob_start();
 $_SESSION['nameCustomer']='';
 // $_COOKIE['nameCustomer']='';
 
@@ -39,21 +39,16 @@ if(isset($_POST['login'])){
         if(mysqli_num_rows($query)==0){
             array_push($errors,'Tài khoản hoặc mật khẩu không chính xác');
         }else{
-            if(empty($_POST['remember'])){
-                setcookie("nameCustomer","");
-                
-              
-            }else{
-                setcookie("nameCustomer",$nameCustomer,time()+3600);
-
-            }
-            session_start();
-            
+           
+           
+            $_SESSION['idCustomer']=$user['idCustomer'];
             $_SESSION['nameCustomer']=$user['nameCustomer'];
             $_SESSION['avatarCustomer']=$user['avatarCustomer'];
             $_SESSION['emailCustomer']=$user['emailCustomer'];
-            if($_SESSION['nameCustomer']){
+            if($_SESSION['nameCustomer'] !=''){
                 header('location:index.php');
+                
+             
             }
         }
 
@@ -65,6 +60,8 @@ if(isset($_POST['login'])){
 ?>
 
 <div class="container mg-top" id="form-login">
+
+    <h2>Đăng nhập</h2>
     <form class="form-horizontal" action="" method="post">
         <?php require('layout/message.php')?>
         <div class="form-group">
@@ -83,7 +80,10 @@ if(isset($_POST['login'])){
                 </div>
         </div>
        <button type="submit" name="login" class="btn btn-primary">Đăng Nhập</button>
+      
     </form>
+    <hr>
+    <a href="http://localhost/bansach_php/public/admin/login_ad.php"  class="btn btn-danger">Đăng Nhập Quản trị</a>
 </div>
 
 
